@@ -1,14 +1,30 @@
 /* add your own styles here */
 
 body{
-    background-color: rgb(156, 156, 156);
+    background: rgb(218,218,218);
+    background: linear-gradient(0deg, rgba(218,218,218,1) 0%, rgba(255,255,255,1) 100%, rgba(0,173,238,1) 100%);
+}
+
+button {
+    padding: 20px;
+
+    color: black;
+    border-radius: 100%;
 }
 
 .container {
     text-align: center;
-    margin-left: 50px;
+}
 
-    
+.led-container {
+    margin-left: 150px;
+    margin-bottom: 300px;
+    margin-top: 50px;
+}
+
+.button-container {
+    margin-left: 50px;
+    margin-right: 50px;
 }
 
 .indicator {

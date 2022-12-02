@@ -18,9 +18,8 @@
     under the License.
 -->
 <html>
-
-<head>
-    <meta charset="utf-8">
+  <head>
+    <meta charset="utf-8" />
     <!--
         Customize this policy to fit your own app's needs. For more guidance, please refer to the docs:
             https://cordova.apache.org/docs/en/latest/
@@ -30,37 +29,69 @@
                 * Enable inline JS: add 'unsafe-inline' to default-src
         -->
     <!-- GOOGLE FONTS has been added to the security policy -->
-    <meta http-equiv="Content-Security-Policy"
-        content="default-src 'self' data: https://ssl.gstatic.com 'unsafe-eval'; style-src 'self' 'unsafe-inline' fonts.googleapis.com; media-src *; img-src 'self' data: content:; font-src 'self' data: fonts.gstatic.com;">
-    <meta name="format-detection" content="telephone=no">
-    <meta name="msapplication-tap-highlight" content="no">
-    <meta name="viewport" content="initial-scale=1, width=device-width, viewport-fit=cover">
-    <meta name="color-scheme" content="light dark">
-    <link rel="stylesheet" href="css/styles.css">
-    <title>Template</title>
-</head>
+    <meta http-equiv="Content-Security-Policy" content="default-src 'self' data: https://ssl.gstatic.com 'unsafe-eval'; 
+    style-src 'self' 'unsafe-inline' fonts.googleapis.com; media-src *; img-src 'self' data: content:; font-src 'self' data: fonts.gstatic.com;">
+    <meta name="format-detection" content="telephone=no" />
+    <meta name="msapplication-tap-highlight" content="no" />
+    <meta
+      name="viewport"
+      content="initial-scale=1, width=device-width, viewport-fit=cover"
+    />
+    <link rel="stylesheet" href="css/framework7-bundle.min.css" />
+    <meta name="color-scheme" content="light dark" />
+    <link rel="stylesheet" href="css/styles.css" />
+    <title>Ghost Detector</title>
+  </head>
 
-<body>
-    <div id="z"></div>
+  <body class="dark">
+    <!-- <div id="z"></div>
     <div id="x"></div>
     <div id="y"></div>
 
     <div id="entity-textz"></div>
-    <div id="entity-textx"></div>
+    <div id="entity-textx"></div> -->
+
+
+
+
+     <div id="app">
+    <!-- panel components go here -->
     
-
-    <div class="container">
-        <h1>Spirit Detector</h1>
-        <div id="i5" class="indicator red"></div>
-        <div id="i4" class="indicator yellow"></div>
-        <div id="i3" class="indicator yellow"></div>
-        <div id="i2" class="indicator green"></div>
-        <div id="i1" class="indicator green"></div>
+     <div class="view view-main">
+     <!-- component will apply to all pages in view -->
+  
+        <div data-name="home" class="page">
+        <!-- component is fixed to the page -->
+        <div class="navbar">
+            <div class="navbar-bg"></div>
+            <div class="navbar-inner">
+                <div class="title" style="text-align:center;">Spirit Detector</div>
+            </div>
+        </div>
+          <div class="page-content">
+            <div class="container">
+                <div class="led-container">
+                  <div id="i5" class="indicator red"></div>
+                  <div id="i4" class="indicator yellow"></div>
+                  <div id="i3" class="indicator yellow"></div>
+                  <div id="i2" class="indicator green"></div>
+                  <div id="i1" class="indicator green"></div>
+                </div>
+                <div class="button-container">
+                    <button class="button button-raised button-fill color-green" id="onbtn">TURN ON</button>
+                    <button class="button button-raised button-fill color-red" id="offbtn">TURN OFF</button>
+                </div>
+              </div>
+          
+              <script src="cordova.js"></script>
+              <script src="js/jquery-3.6.1.min.js"></script>
+              <script src="js/framework7-bundle.min.js"></script>
+              <script src="js/index.js"></script>
+              <script src="js/script.js"></script>
+            
+          </div>
+        </div>
+      </div>
     </div>
-
-    <script src="cordova.js"></script>
-    <script src="js/jquery-3.6.1.min.js"></script>
-    <script src="js/index.js"></script>
-</body>
-
+  </body>
 </html>
