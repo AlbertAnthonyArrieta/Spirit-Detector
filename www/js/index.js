@@ -1,29 +1,64 @@
-/*
- * Licensed to the Apache Software Foundation (ASF) under one
- * or more contributor license agreements.  See the NOTICE file
- * distributed with this work for additional information
- * regarding copyright ownership.  The ASF licenses this file
- * to you under the Apache License, Version 2.0 (the
- * "License"); you may not use this file except in compliance
- * with the License.  You may obtain a copy of the License at
- *
- * http://www.apache.org/licenses/LICENSE-2.0
- *
- * Unless required by applicable law or agreed to in writing,
- * software distributed under the License is distributed on an
- * "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY
- * KIND, either express or implied.  See the License for the
- * specific language governing permissions and limitations
- * under the License.
- */
 
-// Wait for the deviceready event before using any of Cordova's device APIs.
-// See https://cordova.apache.org/docs/en/latest/cordova/events/events.html#deviceready
 document.addEventListener('deviceready', onDeviceReady, false);
 
 function onDeviceReady() {
-    // Cordova is now initialized. Have fun!
+    if (window.DeviceOrientationEvent) {
+        window.addEventListener("deviceorientation", handleMotion);
+    } else {
+        alert("sorry your browser does not support this");
+    }
 
-    console.log('Running cordova-' + cordova.platformId + '@' + cordova.version);
-    document.getElementById('deviceready').classList.add('ready');
+    var entityz = Math.random() * (360 - 0) + 0;
+    var entityx = Math.random() * (110 - 0) + 0;
+        $("#entity-textz").text(entityz);
+        $("#entity-textx").text(entityx);
+
+    function handleMotion(event) {
+
+        
+        var z = event.alpha;
+        var x = event.beta;
+        var y = event.gamma;
+
+        $("#z").text("z: " + z);
+        $("#x").text("x: " + x);
+        $("#y").text("y: " + y);
+
+        if (z < entityz + 2 && z > entityz - 2 && x < entityx + 2 && x > entityx - 2) {
+            $("#i5").css("background", "red");
+            $("#i4").css("background", "yellow");
+            $("#i3").css("background", "yellow");
+            $("#i2").css("background", "rgb(21, 241, 72)");
+            $("#i1").css("background", "rgb(21, 241, 72)");
+        } else if (z < entityz + 25 && z > entityz - 25 && x < entityx + 25 && x > entityx - 25){
+            $("#i5").css("background", "rgb(130, 21, 21)");
+            $("#i4").css("background", "yellow");
+            $("#i3").css("background", "yellow");
+            $("#i2").css("background", "rgb(21, 241, 72)");
+            $("#i1").css("background", "rgb(21, 241, 72)");
+        } else if (z < entityz + 50 && z > entityz - 50 && x < entityx + 50 && x > entityx - 50) {
+            $("#i5").css("background", "rgb(130, 21, 21)");
+            $("#i4").css("background", "rgb(142, 126, 0)");
+            $("#i3").css("background", "yellow");
+            $("#i2").css("background", "rgb(21, 241, 72)");
+            $("#i1").css("background", "rgb(21, 241, 72)");
+        } else if (z < entityz + 75 && z > entityz - 75 && x < entityx + 75 && x > entityx - 75) {
+            $("#i5").css("background", "rgb(130, 21, 21)");
+            $("#i4").css("background", "rgb(142, 126, 0)");
+            $("#i3").css("background", "rgb(142, 126, 0)");
+            $("#i2").css("background", "rgb(21, 241, 72)");
+            $("#i1").css("background", "rgb(21, 241, 72)");
+        } else if (z < entityz + 100 && z > entityz - 100 && x < entityx + 100 && x > entityx - 100) {
+            $("#i5").css("background", "rgb(130, 21, 21)");
+            $("#i4").css("background", "rgb(142, 126, 0)");
+            $("#i3").css("background", "rgb(142, 126, 0)");
+            $("#i2").css("background", "rgb(11, 92, 30)");
+            $("#i1").css("background", "rgb(21, 241, 72)");
+        } 
+
+       
+
+
+    }
+
 }
