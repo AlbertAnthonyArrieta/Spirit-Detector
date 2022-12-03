@@ -7,18 +7,26 @@ body{
 
 button {
     padding: 20px;
-
     color: black;
     border-radius: 100%;
+}
+
+#helpbtn {
+    margin-bottom: 100px;
 }
 
 .container {
     text-align: center;
 }
 
+.help-container {
+    margin-left: 100px;
+    margin-right: 100px;
+}
+
 .led-container {
-    margin-left: 150px;
-    margin-bottom: 300px;
+    margin-left: 160px;
+    margin-bottom: 100px;
     margin-top: 50px;
 }
 
